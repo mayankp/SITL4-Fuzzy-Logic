@@ -1,0 +1,45 @@
+[System]
+Name='Mayank_FIS_1_FoodExample'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=7
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Food'
+Range=[0 10]
+NumMFs=2
+MF1='Rancid':'trimf',[-3.14 -0.0422 10.1190476190476]
+MF2='Yummy':'trimf',[8.03 9.96 13.4]
+
+[Input2]
+Name='Service'
+Range=[0 10]
+NumMFs=3
+MF1='Poor':'trimf',[-4.17 0 3.98148148148148]
+MF2='Average':'trimf',[4.03 7.08 7.94973544973545]
+MF3='Brilliant':'trimf',[7.94973544973545 10 15]
+
+[Output1]
+Name='Tip'
+Range=[0 10]
+NumMFs=4
+MF1='Cheap':'trimf',[-4.17 0 6.07142857142857]
+MF2='Average':'trimf',[5.99 7.57936507936508 9.01]
+MF3='Generous':'trimf',[8.95502645502645 10 14.2]
+MF4='No_Tip':'trimf',[-9.98 0.0121 0.0132]
+
+[Rules]
+1 1, 1 (1) : 2
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 3 (1) : 1
+1 3, 1 (1) : 1
+1 2, 1 (1) : 1
+1 1, 4 (1) : 1
